@@ -828,7 +828,9 @@ int main(int argc, char *argv[])
     wxAppConsole::CheckBuildOptions(WX_BUILD_OPTIONS_SIGNATURE, "diff-pdf");
     wxInitializer wxinitializer(argc, argv);
 
+    #ifndef GLIB_VERSION_2_36
     g_type_init();
+    #endif
 
     static const wxCmdLineEntryDesc cmd_line_desc[] =
     {
